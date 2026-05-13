@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Abhay Raj — System Interface v2026</title>
+<meta name="description" content="Abhay Raj — Engineering Aspirant. Curious by nature. Disciplined by choice. Building systems that matter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-panel top"></div>
+  <div class="pre-panel bottom"></div>
+  <div class="boot-terminal" id="boot-term">
+    <span class="boot-cursor"></span>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="modal-box">
+    <button class="modal-x" id="modal-x" aria-label="Close">✕</button>
+    <div class="modal-icon" id="m-icon"></div>
+    <h3 class="modal-h" id="m-title"></h3>
+    <span class="modal-tag" id="m-tag"></span>
+    <p class="modal-body" id="m-body"></p>
+    <p class="modal-body-2" id="m-body2"></p>
+    <div class="modal-chips" id="m-chips"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="ar-logo" aria-label="Abhay Raj — Home">AR</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#system-core">System</a></li>
+    <li><a href="#silicon-chips">Stack</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#human-layer">Human</a></li>
+    <li><a href="#personality">Terminal</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-ham" id="nav-ham" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+
+<!-- ════ HERO ════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-inner">
+
+    <!-- Left: Identity -->
+    <div class="hero-left">
+      <div class="hero-badge fi">
+        <div class="pulse-dot"></div>
+        <span>SYSTEM ONLINE — BUILD:2026.1</span>
+      </div>
+
+      <!--
+        Name on ONE LINE — no line break tag.
+        Font scales with clamp() so it never wraps.
+      -->
+      <h1 class="hero-name fi d1">Abhay Raj<span class="acc">.</span></h1>
+
+      <p class="hero-hl fi d2">
+        <strong>Engineering Aspirant (CSE).</strong><br>
+        Curious by nature. Disciplined by choice.<br>
+        Building systems that matter.
+      </p>
+
+      <p class="hero-tagline fi d3">
+        99% Logic &nbsp;·&nbsp; 1% Caffeine &nbsp;·&nbsp; 0% Patience for Bad UI
+      </p>
+
+      <div class="hero-btns fi d4">
+        <a href="#projects" class="btn-a">View Projects →</a>
+        <button class="btn-dnt" id="dnt-btn">⚠ DO NOT TOUCH</button>
+      </div>
+    </div>
+
+    <!--
+      Right: Photo or Circuit SVG
+      ─────────────────────────────────────────
+      TO ADD YOUR PHOTO:
+        1. Put your photo in an "images/" folder
+        2. Replace the SVG below with:
+           <img src="images/your-photo.jpg" alt="Abhay Raj">
+        3. The .hero-photo-ph wrapper will handle the styling
+
+      For now, the circuit SVG acts as the visual.
+      ─────────────────────────────────────────
+    -->
+    <div class="hero-right-wrap fi d2" aria-hidden="true">
+
+      <!-- Option A: Circuit SVG (default) -->
+      <svg viewBox="0 0 340 340" width="100%" style="max-width:340px" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="30" width="280" height="280" stroke="#D1D5DB" stroke-width="1"/>
+        <rect x="54" y="54" width="232" height="232" stroke="#D1D5DB" stroke-width="0.6" stroke-dasharray="5 5"/>
+        <circle cx="170" cy="170" r="52" fill="rgba(34,197,94,0.07)" stroke="#22C55E" stroke-width="1.5"/>
+        <circle cx="170" cy="170" r="26" fill="rgba(34,197,94,0.12)" stroke="#22C55E" stroke-width="1"/>
+        <circle cx="170" cy="170" r="7" fill="#22C55E"/>
+        <path d="M170 118 L170 76 L126 76 L126 54" stroke="#22C55E" stroke-width="1.5" stroke-opacity="0.65"/>
+        <path d="M170 222 L170 264 L214 264 L214 286" stroke="#22C55E" stroke-width="1.5" stroke-opacity="0.65"/>
+        <path d="M118 170 L76 170 L76 126 L54 126" stroke="#22C55E" stroke-width="1.5" stroke-opacity="0.65"/>
+        <path d="M222 170 L264 170 L264 214 L286 214" stroke="#22C55E" stroke-width="1.5" stroke-opacity="0.65"/>
+        <circle cx="126" cy="54"  r="9" fill="#F0F2F5" stroke="#22C55E" stroke-width="1.5"/>
+        <circle cx="214" cy="286" r="9" fill="#F0F2F5" stroke="#22C55E" stroke-width="1.5"/>
+        <circle cx="54"  cy="126" r="9" fill="#F0F2F5" stroke="#22C55E" stroke-width="1.5"/>
+        <circle cx="286" cy="214" r="9" fill="#F0F2F5" stroke="#22C55E" stroke-width="1.5"/>
+        <rect x="230" y="78"  width="44" height="34" rx="2" fill="none" stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="230" y1="89"  x2="218" y2="89"  stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="230" y1="100" x2="218" y2="100" stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="274" y1="89"  x2="286" y2="89"  stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="274" y1="100" x2="286" y2="100" stroke="#D1D5DB" stroke-width="1"/>
+        <rect x="62"  y="220" width="44" height="34" rx="2" fill="none" stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="62"  y1="231" x2="50"  y2="231" stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="62"  y1="242" x2="50"  y2="242" stroke="#D1D5DB" stroke-width="1"/>
+        <line x1="106" y1="231" x2="118" y2="231" stroke="#D1D5DB" stroke-width="1"/>
+        <circle cx="170" cy="170" r="80" fill="none" stroke="#22C55E" stroke-width="0.6" stroke-opacity="0.2">
+          <animate attributeName="r" values="60;96;60" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+
+      <!--
+        Option B: Your Photo (uncomment when ready)
+        <div class="hero-photo-ph">
+          <img src="images/abhay.jpg" alt="Abhay Raj">
+          <div class="ph-inner">
+            <span style="font-size:2rem">📷</span>
+            <span>ADD YOUR PHOTO HERE</span>
+          </div>
+        </div>
+      -->
+
+    </div>
+  </div>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ SYSTEM CORE ════ -->
+<section id="system-core" aria-label="About">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 01 — SYSTEM_CORE</p>
+    <h2 class="section-h fi d1">System <span class="acc">Core</span></h2>
+    <div class="system-grid">
+
+      <div class="data-blocks">
+        <div class="db fi d1"><div class="db-key">PRIMARY_FUNCTION</div><div class="db-val">Building logical, user-focused digital systems</div></div>
+        <div class="db fi d2"><div class="db-key">OPERATING_MODE</div><div class="db-val">Learn → Build → Refine → Repeat</div></div>
+        <div class="db fi d3"><div class="db-key">CORE_VALUES</div><div class="db-val">Discipline · Simplicity · Respect · Curiosity</div></div>
+        <div class="db fi d4"><div class="db-key">RUNTIME_ENV</div><div class="db-val">Code · Calisthenics · Continuous Growth</div></div>
+        <div class="db fi"><div class="db-key">BELIEF_SYSTEM</div><div class="db-val">No one is born extraordinary. Excellence is built through consistent effort, discipline, and time.</div></div>
+        <div class="db fi"><div class="db-key">SIGNATURE</div><div class="db-val">I don't just learn how systems work — I learn how to build better ones.</div></div>
+      </div>
+
+      <div class="story-card fi d1">
+        <h3 class="story-heading">The Story</h3>
+        <p>I grew up in a village where technology felt distant — something that existed elsewhere, for other people. But curiosity doesn't wait for access. Even before I had the tools, I was fascinated by how things worked.</p>
+        <p>When I moved to the city for education, I saw the gap clearly — the competition, the exposure, the pace. It could have been intimidating. Instead, it became fuel. That contrast taught me more about drive than any classroom could.</p>
+        <p>I'm not the fastest. I'm not the loudest. But I show up, consistently. I build, I break things, I learn why, and I rebuild better. That's the loop I live in — and it's the only one I trust.</p>
+        <p class="story-quote">"From limited access to limitless ambition."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ PRINCIPLES ════ -->
+<section id="principles" aria-label="Principles">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 02 — LOGIC_NODES</p>
+    <h2 class="section-h fi d1">Principles I <span class="acc">Build By</span></h2>
+    <div class="principles-grid">
+      <div class="pnode fi d1"><span class="pnum">01</span><span class="ptxt">Consistency beats talent.</span></div>
+      <div class="pnode fi d2"><span class="pnum">02</span><span class="ptxt">Systems over shortcuts.</span></div>
+      <div class="pnode fi d3"><span class="pnum">03</span><span class="ptxt">Simplicity over complexity.</span></div>
+      <div class="pnode fi d4"><span class="pnum">04</span><span class="ptxt">Respect every craft.</span></div>
+      <div class="pnode fi d1"><span class="pnum">05</span><span class="ptxt">Never judge by appearances.</span></div>
+      <div class="pnode fi d2"><span class="pnum">06</span><span class="ptxt">Discipline outlasts motivation.</span></div>
+      <div class="pnode fi d3"><span class="pnum">07</span><span class="ptxt">Build the body as well as the mind.</span></div>
+      <div class="pnode fi d4"><span class="pnum">08</span><span class="ptxt">Learning compounds over time.</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ SILICON CHIPS — click each skill for info popup ════ -->
+<section id="silicon-chips" aria-label="Skills">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 03 — SILICON_CHIPS</p>
+    <h2 class="section-h fi d1">Toolset &amp; <span class="acc">Stack</span></h2>
+  </div>
+  <div class="chips-wrap">
+    <div class="chip-mod fi d1">
+      <div class="chip-title">◆ Current Stack</div>
+      <ul class="skill-list">
+        <li class="skill-item" data-skill="html5"       tabindex="0" role="button"><span class="sdot active"></span>HTML5<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="css3"        tabindex="0" role="button"><span class="sdot active"></span>CSS3<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="tailwind"    tabindex="0" role="button"><span class="sdot active"></span>Tailwind CSS<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="javascript"  tabindex="0" role="button"><span class="sdot active"></span>JavaScript<span class="skill-hint">tap →</span></li>
+      </ul>
+    </div>
+    <div class="chip-mod fi d2">
+      <div class="chip-title">◈ Currently Learning</div>
+      <ul class="skill-list">
+        <li class="skill-item" data-skill="python"  tabindex="0" role="button"><span class="sdot learning"></span>Python<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="backend" tabindex="0" role="button"><span class="sdot learning"></span>Backend Fundamentals<span class="skill-hint">tap →</span></li>
+      </ul>
+    </div>
+    <div class="chip-mod fi d3">
+      <div class="chip-title">◇ Roadmap</div>
+      <ul class="skill-list">
+        <li class="skill-item" data-skill="cpp"           tabindex="0" role="button"><span class="sdot road"></span>C / C++<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="dsa"           tabindex="0" role="button"><span class="sdot road"></span>Data Structures &amp; Algorithms<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="aiml"          tabindex="0" role="button"><span class="sdot road"></span>AI / Machine Learning<span class="skill-hint">tap →</span></li>
+        <li class="skill-item" data-skill="cybersecurity" tabindex="0" role="button"><span class="sdot road"></span>Cybersecurity Foundations<span class="skill-hint">tap →</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ DEBUGGING ════ -->
+<section id="debugging" aria-label="Currently Debugging">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 04 — DEBUGGING_LOG</p>
+    <h2 class="section-h fi d1">Currently <span style="color:var(--accent)">Debugging</span></h2>
+  </div>
+  <div class="debug-list">
+    <div class="debug-row fi d1"><span class="d-idx">ERR_01</span><span class="d-txt">Strengthening JavaScript fundamentals</span><div class="d-status"><div class="dpulse"></div>ACTIVE</div></div>
+    <div class="debug-row fi d2"><span class="d-idx">ERR_02</span><span class="d-txt">Learning backend architecture &amp; server concepts</span><div class="d-status"><div class="dpulse"></div>ACTIVE</div></div>
+    <div class="debug-row fi d3"><span class="d-idx">ERR_03</span><span class="d-txt">Improving design intuition and visual systems</span><div class="d-status"><div class="dpulse"></div>ACTIVE</div></div>
+    <div class="debug-row fi d4"><span class="d-idx">ERR_04</span><span class="d-txt">Building structured problem-solving systems</span><div class="d-status"><div class="dpulse"></div>ACTIVE</div></div>
+    <div class="debug-row fi">  <span class="d-idx">ERR_05</span><span class="d-txt">Developing physical discipline through calisthenics</span><div class="d-status"><div class="dpulse"></div>ACTIVE</div></div>
+  </div>
+</section>
+
+<div class="wire-connector" style="background:linear-gradient(to bottom,#111827,#D1D5DB)" aria-hidden="true"></div>
+
+<!-- ════ PROJECTS
+     ─ TO ADD IMAGE: add class "has-img" to .proj-img div, then put <img> inside it
+       Example: <div class="proj-img has-img"><img src="images/portfolio.jpg" alt="..."></div>
+     ─ TO ADD LINKS: uncomment the <a> tags inside .proj-links
+════ -->
+<section id="projects" aria-label="Projects">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 05 — LOGIC_GATES</p>
+    <h2 class="section-h fi d1">Project <span class="acc">Showcase</span></h2>
+  </div>
+  <div class="projects-grid">
+
+    <article class="proj-card fi d1">
+      <div class="proj-img">
+        <!-- Replace with: <div class="proj-img has-img"><img src="images/portfolio.jpg" alt="Portfolio v1.0"></div> -->
+        <div class="img-ph"><span class="ph-emoji">🖥</span><span class="ph-text">ADD PROJECT IMAGE</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-top"><div class="proj-icon">🖥</div><div><div class="proj-name">Portfolio v1.0</div></div></div>
+        <div class="proj-sub">// Personal identity &amp; design system</div>
+        <div class="proj-meta">
+          <div class="proj-row"><span class="p-lbl">Objective</span><span class="p-val">Build a personal digital identity that communicates mindset, not just skills.</span></div>
+          <div class="proj-row"><span class="p-lbl">Problem</span><span class="p-val">Most portfolios feel generic. This needed to feel like a system.</span></div>
+          <div class="proj-row"><span class="p-lbl">Solution</span><span class="p-val">Motherboard Blueprint × Logic Flowchart — every element intentional.</span></div>
+          <div class="proj-row"><span class="p-lbl">Learning</span><span class="p-val">Design thinking, responsive systems, and storytelling through UI.</span></div>
+        </div>
+        <div class="proj-links">
+          <!-- <a href="PASTE_LIVE_LINK_HERE" target="_blank" rel="noopener" class="proj-link">Live Demo →</a> -->
+          <!-- <a href="PASTE_GITHUB_LINK_HERE" target="_blank" rel="noopener" class="proj-link">GitHub →</a> -->
+          <span class="proj-link-ph">// Links coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card fi d2">
+      <div class="proj-img">
+        <div class="img-ph"><span class="ph-emoji">🌤</span><span class="ph-text">ADD PROJECT IMAGE</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-top"><div class="proj-icon">🌤</div><div><div class="proj-name">SkyCast Weather</div></div></div>
+        <div class="proj-sub">// API-powered weather node system</div>
+        <div class="proj-meta">
+          <div class="proj-row"><span class="p-lbl">Objective</span><span class="p-val">Real-time weather through a clean, minimal interface.</span></div>
+          <div class="proj-row"><span class="p-lbl">Problem</span><span class="p-val">Weather apps are cluttered. Users want clarity and speed.</span></div>
+          <div class="proj-row"><span class="p-lbl">Solution</span><span class="p-val">API integration with location-based data rendering.</span></div>
+          <div class="proj-row"><span class="p-lbl">Learning</span><span class="p-val">API consumption, async JavaScript, minimalist data display.</span></div>
+        </div>
+        <div class="proj-links">
+          <!-- <a href="PASTE_LIVE_LINK_HERE" target="_blank" rel="noopener" class="proj-link">Live Demo →</a> -->
+          <!-- <a href="PASTE_GITHUB_LINK_HERE" target="_blank" rel="noopener" class="proj-link">GitHub →</a> -->
+          <span class="proj-link-ph">// Links coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card fi d3">
+      <div class="proj-img">
+        <div class="img-ph"><span class="ph-emoji">🛡</span><span class="ph-text">ADD PROJECT IMAGE</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-top"><div class="proj-icon">🛡</div><div><div class="proj-name">ShieldCheck</div></div></div>
+        <div class="proj-sub">// Cybersecurity input validation tool</div>
+        <div class="proj-meta">
+          <div class="proj-row"><span class="p-lbl">Objective</span><span class="p-val">Make password security visual, educational, immediate.</span></div>
+          <div class="proj-row"><span class="p-lbl">Problem</span><span class="p-val">Users don't see why passwords fail — feedback is invisible.</span></div>
+          <div class="proj-row"><span class="p-lbl">Solution</span><span class="p-val">Regex-powered real-time strength indicators with visual layers.</span></div>
+          <div class="proj-row"><span class="p-lbl">Learning</span><span class="p-val">Regex, security fundamentals, progressive UI feedback.</span></div>
+        </div>
+        <div class="proj-links">
+          <!-- <a href="PASTE_LIVE_LINK_HERE" target="_blank" rel="noopener" class="proj-link">Live Demo →</a> -->
+          <!-- <a href="PASTE_GITHUB_LINK_HERE" target="_blank" rel="noopener" class="proj-link">GitHub →</a> -->
+          <span class="proj-link-ph">// Links coming soon</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj-card fi d4">
+      <div class="proj-img">
+        <div class="img-ph"><span class="ph-emoji">📈</span><span class="ph-text">ADD PROJECT IMAGE</span></div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-top"><div class="proj-icon">📈</div><div><div class="proj-name">Fitness Tracker</div></div></div>
+        <div class="proj-sub">// Performance growth graph system</div>
+        <div class="proj-meta">
+          <div class="proj-row"><span class="p-lbl">Objective</span><span class="p-val">Log training progress distraction-free.</span></div>
+          <div class="proj-row"><span class="p-lbl">Problem</span><span class="p-val">Existing apps are overbuilt. Simplicity enables consistency.</span></div>
+          <div class="proj-row"><span class="p-lbl">Solution</span><span class="p-val">Minimal tracker with progress graphs and local storage.</span></div>
+          <div class="proj-row"><span class="p-lbl">Learning</span><span class="p-val">Data visualisation, localStorage, building tools you'll use.</span></div>
+        </div>
+        <div class="proj-links">
+          <!-- <a href="PASTE_LIVE_LINK_HERE" target="_blank" rel="noopener" class="proj-link">Live Demo →</a> -->
+          <!-- <a href="PASTE_GITHUB_LINK_HERE" target="_blank" rel="noopener" class="proj-link">GitHub →</a> -->
+          <span class="proj-link-ph">// Links coming soon</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <p class="projects-note fi">// Compiled successfully (after 47 failed attempts).</p>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ HUMAN LAYER ════ -->
+<section id="human-layer" aria-label="Beyond Code">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-lbl fi">// 06 — HUMAN_LAYER</p>
+    <h2 class="section-h fi d1">Beyond <span class="acc">Code</span></h2>
+    <p class="human-intro fi d2">The world is bigger than money and fame. Here's what I train when I'm not at a keyboard. Tap any card to learn more.</p>
+  </div>
+  <div class="interests-grid">
+    <div class="int-card fi d1" data-key="calisthenics" tabindex="0" role="button"><div class="int-icon">💪</div><div class="int-name">Calisthenics</div><div class="int-tag">DISCIPLINE</div></div>
+    <div class="int-card fi d2" data-key="swimming"     tabindex="0" role="button"><div class="int-icon">🏊</div><div class="int-name">Swimming</div><div class="int-tag">ENDURANCE</div></div>
+    <div class="int-card fi d3" data-key="boxing"       tabindex="0" role="button"><div class="int-icon">🥊</div><div class="int-name">Boxing</div><div class="int-tag">FOCUS</div></div>
+    <div class="int-card fi d4" data-key="guitar"       tabindex="0" role="button"><div class="int-icon">🎸</div><div class="int-name">Guitar</div><div class="int-tag">CREATIVITY</div></div>
+  </div>
+</section>
+
+<div class="wire-connector" aria-hidden="true"></div>
+
+<!-- ════ PERSONALITY.EXE ════ -->
+<section id="personality" aria-label="Terminal">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-lbl fi">// 07 — PERSONALITY.EXE</p>
+    <h2 class="section-h fi d1">Run <span style="color:var(--accent)">Personality</span>.exe</h2>
+  </div>
+  <div class="term-wrap fi">
+    <div class="term-bar" aria-hidden="true">
+      <div class="tdot r"></div><div class="tdot y"></div><div class="tdot g"></div>
+      <span class="term-bar-title">personality.exe — abhay@system:~</span>
+    </div>
+    <div class="term-body" id="term-body">
+      <span class="tl"><span class="tp">abhay@system:~$</span> ./personality.exe</span>
+      <span class="to">Booting Abhay_Raj kernel...</span>
+      <span class="to">Loading personality modules... <span style="color:#22C55E">✓</span></span>
+      <span class="to">Type <span style="color:#22C55E">help</span> to see available commands.</span>
+      <br>
+      <div class="t-input-row">
+        <span class="tp">abhay@system:~$</span>
+        <input type="text" class="t-input" id="t-input" placeholder="type a command..." autocomplete="off" spellcheck="false" aria-label="Terminal input">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wire-connector" style="background:linear-gradient(to bottom,#0d1117,#D1D5DB)" aria-hidden="true"></div>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact" aria-label="Contact">
+  <div style="max-width:1000px;margin:0 auto;">
+    <p class="section-lbl fi">// 08 — OUTPUT_PORT</p>
+    <h2 class="section-h fi d1">Contact <span class="acc">Section</span></h2>
+  </div>
+  <div class="contact-grid">
+
+    <!-- Social Cards -->
+    <div class="fi d1">
+      <h3 class="ci-title">Let's Build Something.</h3>
+      <p class="ci-desc">Have an idea, a question, or just want to connect? Send a transmission and I'll respond soon.</p>
+      <div class="social-cards">
+        <a href="https://linkedin.com/in/abhayrajhq" target="_blank" rel="noopener" class="scard">
+          <div class="scard-icon">in</div>
+          <div class="scard-info"><div class="scard-platform">LinkedIn</div><div class="scard-handle">@abhayrajhq</div></div>
+          <div class="scard-arr">→</div>
+        </a>
+        <a href="https://github.com/abhayrajhq" target="_blank" rel="noopener" class="scard">
+          <div class="scard-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></div>
+          <div class="scard-info"><div class="scard-platform">GitHub</div><div class="scard-handle">@abhayrajhq</div></div>
+          <div class="scard-arr">→</div>
+        </a>
+        <a href="https://twitter.com/abhayrajhq" target="_blank" rel="noopener" class="scard">
+          <div class="scard-icon">𝕏</div>
+          <div class="scard-info"><div class="scard-platform">Twitter / X</div><div class="scard-handle">@abhayrajhq</div></div>
+          <div class="scard-arr">→</div>
+        </a>
+        <a href="https://instagram.com/abhayrajhq" target="_blank" rel="noopener" class="scard">
+          <div class="scard-icon">ig</div>
+          <div class="scard-info"><div class="scard-platform">Instagram</div><div class="scard-handle">@abhayrajhq</div></div>
+          <div class="scard-arr">→</div>
+        </a>
+        <a href="mailto:abhayrajhq@gmail.com" class="scard" style="grid-column:1/-1">
+          <div class="scard-icon">@</div>
+          <div class="scard-info"><div class="scard-platform">Email</div><div class="scard-handle">abhayrajhq@gmail.com</div></div>
+          <div class="scard-arr">→</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="fi d2">
+      <form class="cf" id="cf" action="https://formspree.io/f/mnjlwwev" method="POST" novalidate>
+        <div class="fg"><label for="f-name">NAME_INPUT</label><input type="text" id="f-name" name="name" class="f-in" placeholder="Your name" required autocomplete="name"></div>
+        <div class="fg"><label for="f-email">EMAIL_INPUT</label><input type="email" id="f-email" name="email" class="f-in" placeholder="Your email address" required autocomplete="email"></div>
+        <div class="fg"><label for="f-msg">MESSAGE_DATA</label><textarea id="f-msg" name="message" class="f-in" placeholder="Your message..." required></textarea></div>
+        <button type="submit" class="btn-send" id="send-btn">
+          <span id="send-txt">TRANSMIT MESSAGE</span>
+          <span id="send-ico">→</span>
+        </button>
+      </form>
+      <div class="form-ok" id="form-ok" role="status">
+        <div style="font-size:2rem;margin-bottom:10px">✓</div>
+        <strong>Transmission Successful.</strong><br>
+        <span style="color:var(--text-sec);font-size:12px;">Abhay Raj will respond soon.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-name">Abhay Raj</div>
+        <div class="foot-sub">// Still learning. Still building. Still curious.</div>
+      </div>
+      <div class="foot-social">
+        <a href="https://linkedin.com/in/abhayrajhq" target="_blank" rel="noopener" class="soc" title="LinkedIn">in</a>
+        <a href="https://github.com/abhayrajhq" target="_blank" rel="noopener" class="soc" title="GitHub"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        <a href="https://twitter.com/abhayrajhq" target="_blank" rel="noopener" class="soc" title="X">𝕏</a>
+        <a href="https://instagram.com/abhayrajhq" target="_blank" rel="noopener" class="soc" title="Instagram">ig</a>
+        <a href="mailto:abhayrajhq@gmail.com" class="soc" title="Email">@</a>
+      </div>
+    </div>
+    <hr class="fdiv">
+    <div class="foot-bot">
+      <div class="foot-copy">
+        Built with Logic. Processed in 2026.<br>
+        <span style="font-size:10px">Engineering systems with logic, discipline, and purpose.</span>
+      </div>
+      <button class="btn-egg" id="footer-egg">⚠ DO NOT CLICK AGAIN</button>
+    </div>
+  </div>
+</footer>
+
+<!-- FINAL CLOSING SECTION -->
+<section class="final-script" aria-label="Closing">
+  <div class="fs-inner">
+    <p class="fs-status fi">SYSTEM_STATUS: RUNNING</p>
+    <h2 class="fs-title fi d1">The system is running.<br><span class="acc">Updates are ongoing.</span></h2>
+    <p class="fs-desc fi d2">Version 1.0 is live. Better versions are already in development.</p>
+    <p class="fs-mono fi d3">Still learning. Still building. Still curious.</p>
+    <div class="fs-prompt fi d4">
+      <span class="tp">abhay@system:~$</span>
+      <span class="fs-cur"></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<button class="scroll-up" id="scroll-up" aria-label="Scroll to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
